@@ -104,3 +104,134 @@ Feel free to contribute by:
 ### License
 
 MIT License
+
+## Smart Grid Communication Encryption Performance Analysis
+
+This project implements performance comparison analysis of different encryption algorithms in smart grid communications.
+
+### Features
+
+- Support for multiple encryption schemes:
+  - Niederreiter encryption (simulated implementation)
+  - RSA encryption
+  - ECC (Elliptic Curve Cryptography)
+  - AES (Advanced Encryption Standard)
+
+- Performance metrics analysis:
+  - Communication latency
+  - Data throughput
+  - Computational overhead
+
+- Visualization analysis:
+  - Time series plots for each metric
+  - Box plots for performance metric distributions
+
+### Dependencies
+
+```python
+numpy
+matplotlib
+cryptography
+```
+
+### Installation
+
+```bash
+pip install numpy matplotlib cryptography
+```
+
+### Usage
+
+1. Import required libraries:
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from cryptography.hazmat.primitives import hashes
+from cryptography.hazmat.primitives.asymmetric import rsa, ec, padding
+from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
+```
+
+2. Create smart grid nodes:
+
+```python
+nodes = create_nodes(encryption_type='RSA')  # or 'ECC', 'AES', 'Niederreiter'
+```
+
+3. Run performance tests:
+
+```python
+latencies, throughputs, overheads = run_experiment(encryption_type)
+```
+
+### Main Classes and Functions
+
+#### SmartGridNode Class
+
+```python
+class SmartGridNode:
+    def __init__(self, node_id, encryption_type='Niederreiter', shared_key=None)
+    def generate_keys(self, shared_key=None)
+    def encrypt_data(self, data, receiver_public_key)
+    def decrypt_data(self, encrypted_data, sender_public_key=None)
+    def sign_data(self, data)
+    def verify_signature(self, data, signature, sender_public_key, sender_id)
+```
+
+#### Helper Functions
+
+```python
+def create_nodes(encryption_type)
+def run_experiment(encryption_type, num_experiments=50)
+```
+
+### Experimental Results
+
+The program generates the following visualization charts:
+- Latency time series comparison for each encryption scheme
+- Throughput time series comparison for each encryption scheme
+- Computational overhead time series comparison for each encryption scheme
+- Box plots for latency distribution
+- Box plots for throughput distribution
+- Box plots for computational overhead distribution
+
+### Implementation Notes
+
+1. Niederreiter encryption is simulated
+2. Additional security considerations needed for real-world applications
+3. Performance results may vary depending on hardware environment
+
+### Contributing
+
+Issues and improvements are welcome!
+
+### License
+
+MIT License
+
+### Technical Details
+
+#### Encryption Methods
+- **RSA**: 2048-bit key size with OAEP padding
+- **ECC**: SECP384R1 curve with ECDSA
+- **AES**: 256-bit key with CBC mode
+- **Niederreiter**: Simulated implementation
+
+#### Performance Metrics
+- **Latency**: Total time for encryption, transmission, and decryption
+- **Throughput**: Data size processed per second
+- **Computational Overhead**: Processing time excluding transmission
+
+#### Security Features
+- Digital signatures
+- Key generation
+- Message authentication
+- Secure padding schemes
+
+### Future Improvements
+
+1. Implementation of actual Niederreiter encryption
+2. Additional encryption schemes
+3. Network condition simulation
+4. Security analysis tools
+5. Real-time monitoring capabilities
