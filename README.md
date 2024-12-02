@@ -105,6 +105,8 @@ Feel free to contribute by:
 
 MIT License
 
+# Fig 5-a
+
 ## Smart Grid Communication Encryption Performance Analysis
 
 This project implements performance comparison analysis of different encryption algorithms in smart grid communications.
