@@ -105,7 +105,7 @@ Feel free to contribute by:
 
 MIT License
 
-# Fig 5-a
+# Fig 5-b
 
 ## Smart Grid Communication Encryption Performance Analysis
 
